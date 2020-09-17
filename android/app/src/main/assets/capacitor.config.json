@@ -1,0 +1,14 @@
+{
+  "appId": "me.pagar",
+  "appName": "cap-react",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "dist",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "linuxAndroidStudioPath": "/usr/bin/android-studio",
+  "cordova": {}
+}
