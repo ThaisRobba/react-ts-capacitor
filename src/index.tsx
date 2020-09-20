@@ -1,30 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
 
-import { Capacitor, Plugins } from "@capacitor/core";
+import routes from './routes'
 
-const App = () => {
-  async function share() {
-    if (!Capacitor.isNative) {
-      console.log("NOT NATIVE");
-    } else {
-      console.log("IS NATIVE!!!");
-    }
-    const { Share } = Plugins;
-    await Share.share({
-      title: "See cool stuff",
-      text: "Really awesome thing you need to see right meow",
-      url: "http://ionicframework.com/",
-      dialogTitle: "Share with buddies",
-    });
-  }
+const App = () => (
+  <BrowserRouter>
+    <Switch>
+      {routes.map((route) => (
+        <Route key={route.path} {...route} />
+      ))}
+    </Switch>
+  </BrowserRouter>
+)
 
-  return (
-    <div>
-      <p>hello2</p>
-      <button onClick={share}>shareee</button>
-    </div>
-  );
-};
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'))

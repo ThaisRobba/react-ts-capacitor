@@ -5,9 +5,10 @@
   "license": "MIT",
   "scripts": {
     "android": "npx cap open android",
-    "sync": "npx cap sync",
+    "build": "rm -rf dist && NODE_ENV=production parcel build src/index.html --no-source-maps && npx cap copy",
     "dev": "npx parcel src/index.html -p 3000 --open",
-    "build": "rm -rf dist && NODE_ENV=production parcel build src/index.html && npx cap copy"
+    "setup": "yarn install && npx cap update",
+    "sync": "npx cap sync"
   },
   "dependencies": {
     "@capacitor/android": "2.4.1",
@@ -15,9 +16,13 @@
     "@capacitor/core": "^2.4.1",
     "es6-promise-plugin": "^4.2.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/react": "^16.9.49",
     "parcel-bundler": "^1.12.4",
     "typescript": "^4.0.2"
   }

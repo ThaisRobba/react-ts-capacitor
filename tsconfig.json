@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "lib": ["es2015", "DOM"]
+    "noImplicitAny": true,
+    "lib": ["es2015", "DOM"],
+    "esModuleInterop": true
   }
 }
